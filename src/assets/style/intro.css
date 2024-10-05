@@ -1,0 +1,119 @@
+
+/* Animation */
+
+.introRock {
+    animation-name: rockMove;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes rockMove {
+    0% {
+      position: relative;
+      right: 400px;
+    }
+    100% {
+      position: relative;
+      right: 0px;
+    }
+  }
+  
+  .introPaper {
+    animation-name: paperMove;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes paperMove {
+    0% {
+      position: relative;
+      left: 600px;
+    }
+    100% {
+      position: relative;
+      left: 0px;
+    }
+  }
+  
+  .introScissor {
+    animation-name: scissorMove;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes scissorMove {
+    0% {
+      position: relative;
+      left: 400px;
+    }
+    100% {
+      position: relative;
+      left: 0px;
+    }
+  }
+
+
+/* mobile size */
+
+@media only screen and (max-width: 320px) {
+
+    #intro{
+        margin-top: 12.5vh;
+        background: rgb(29, 45, 95);
+        color:  rgb(44, 188, 207);
+
+    }
+
+    .titleCon{
+        height: 25vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titleCon h1{
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .animiCon{
+        height: 25vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+        
+    .hand{
+        height:80px;
+        width: 80px;
+    }
+
+    .controlCon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25vh;
+        width: 100vw;
+    }
+
+    .controlCon button{
+        background: none;
+        border-style: none;
+        border: 1px solid white;
+        color: white;
+        height: 50px;
+        width: 50px;
+        border-radius: 10px;
+
+    }
+
+    .controlCon button:hover{
+        cursor: pointer;
+        border-color:  rgb(44, 188, 207);
+
+ 
+
+    }
+
+}
+
