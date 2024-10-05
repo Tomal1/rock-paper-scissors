@@ -15,7 +15,7 @@ class Intro extends React.Component {
         return(
             <div id="intro">
                 <div className="titleCon">
-                    <h1>ROCK PAPER & SCISSORS</h1>
+                    <p>ROCK PAPER & SCISSORS</p>
                 </div>
                     <div className="animiCon">
                         <div className="introThumb">
