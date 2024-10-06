@@ -1,147 +1,133 @@
-
 /* Animation */
 
 .introRock {
-    animation-name: rockMove;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
+  animation-name: rockMove;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes rockMove {
+  0% {
+    position: relative;
+    right: 400px;
   }
-  @keyframes rockMove {
-    0% {
-      position: relative;
-      right: 400px;
-    }
-    100% {
-      position: relative;
-      right: 0px;
-    }
+  100% {
+    position: relative;
+    right: 0px;
   }
-  
-  .introPaper {
-    animation-name: paperMove;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
+}
+
+.introPaper {
+  animation-name: paperMove;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes paperMove {
+  0% {
+    position: relative;
+    left: 600px;
   }
-  
-  @keyframes paperMove {
-    0% {
-      position: relative;
-      left: 600px;
-    }
-    100% {
-      position: relative;
-      left: 0px;
-    }
+  100% {
+    position: relative;
+    left: 0px;
   }
-  
-  .introScissor {
-    animation-name: scissorMove;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
+}
+
+.introScissor {
+  animation-name: scissorMove;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes scissorMove {
+  0% {
+    position: relative;
+    left: 400px;
   }
-  
-  @keyframes scissorMove {
-    0% {
-      position: relative;
-      left: 400px;
-    }
-    100% {
-      position: relative;
-      left: 0px;
-    }
+  100% {
+    position: relative;
+    left: 0px;
   }
+}
 
 /* normal size */
 
-*{
-    font-family: "Courier New";
-    margin: 0px;
-    padding: 0px;
-
+* {
+  font-family: "Courier New";
+  margin: 0px;
+  padding: 0px;
 }
 
-#intro{
-    margin-top: 12.5vh;
-    background: rgb(29, 45, 95);
-    color:  rgb(44, 188, 207);
-
+#intro {
+  margin-top: 12.5vh;
+  background: rgb(29, 45, 95);
+  color: rgb(44, 188, 207);
 }
 
-.titleCon{
-    height: 25vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.titleCon {
+  height: 25vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.titleCon p{
-    font-size: 40px;
+.titleCon p {
+  font-size: 40px;
 }
 
-.animiCon{
-    height: 25vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.animiCon {
+  height: 25vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.hand{
-    height:200px;
-    width: 200px;
+.hand {
+  height: 200px;
+  width: 200px;
 }
 
-.controlCon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 25vh;
-    width: 100vw;
+.controlCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  width: 100vw;
 }
 
-.controlCon button{
-    background: none;
-    border-style: none;
-    border: 1px solid white;
-    color: white;
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
-    font-size: 30px;
-
+.controlCon button {
+  background: none;
+  border-style: none;
+  border: 1px solid white;
+  color: white;
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  font-size: 30px;
 }
 
-.controlCon button:hover{
-    cursor: pointer;
-    border-color:  rgb(44, 188, 207);
-
-
-
+.controlCon button:hover {
+  cursor: pointer;
+  border-color: rgb(44, 188, 207);
 }
-
-
 
 /* mobile size */
 
 @media only screen and (max-width: 720px) {
+  .titleCon p {
+    font-size: 20px;
+  }
 
-    .titleCon p{
-        font-size: 20px;
-    }
-        
-    .hand{
-        height:80px;
-        width: 80px;
-    }
+  .hand {
+    height: 80px;
+    width: 80px;
+  }
 
-    .controlCon button{
-        height: 50px;
-        width: 50px;
-        font-size: 15px;
-    }
-
-
-
+  .controlCon button {
+    height: 50px;
+    width: 50px;
+    font-size: 15px;
+  }
 }
-
