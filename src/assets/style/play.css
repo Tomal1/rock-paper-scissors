@@ -8,6 +8,38 @@
     height: 50vh;
     width: 100vw;
     border: 1px solid blue;
+    display: flex;
+}
+
+
+.mySelection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid pink;
+    height: 100%;
+    width: 50%;
+
+}
+.compSelection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid aqua;
+    height: 100%;
+    width: 50%;
+
+}
+
+.mySelectionOnHUD{
+    height: 200px;
+    width: 200px;
+
+}
+.compSelectionOnHUD{
+    height: 200px;
+    width: 200px;
+
 }
 
 .choice {
