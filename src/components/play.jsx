@@ -11,10 +11,8 @@ class Play extends React.Component {
     this.state = {
       src: "",
       compSelection: "",
-      compSrc: "",
     };
 
-    this.computerRender = this.computerRender.bind(this);
     this.compSelection = this.compSelection.bind(this);
     this.mySelection = this.mySelection.bind(this);
   }
@@ -22,58 +20,33 @@ class Play extends React.Component {
   mySelection(e) {
     this.compSelection();
 
-    if (
-      e.target.currentSrc ===
-      "http://localhost:5173/rock-paper-scissors/images/scissors-removebg-preview.png"
-    ) {
-      this.setState({
-        src: this.scissor,
-      });
-    } else if (
-      e.target.currentSrc ===
-      "http://localhost:5173/rock-paper-scissors/images/rock-removebg-preview.png"
-    ) {
-      this.setState({
-        src: this.rock,
-      });
-    } else {
-      this.setState({
-        src: this.paper,
-      });
-    }
+    let result = "";
+
+    e.target.currentSrc ===
+    "http://localhost:5173/rock-paper-scissors/images/scissors-removebg-preview.png"
+      ? (result = result + this.scissor)
+      : e.target.currentSrc ===
+        "http://localhost:5173/rock-paper-scissors/images/rock-removebg-preview.png"
+      ? (result = result + this.rock)
+      : (result = result + this.paper);
+
+    this.setState({
+      src: result,
+    });
   }
 
   compSelection() {
-    let array = ["rock", "paper", "scissor"];
+    let array = [this.rock, this.paper, this.scissor];
 
     for (let i = 0; i < 3; i++) {
       let random = array[Math.floor(Math.random() * array.length)];
       this.setState({
         compSelection: random,
       });
-      this.computerRender();
     }
-  }
-
-  computerRender() {
-    let result = "";
-
-    if (this.state.compSelection === "rock") {
-      result = result + this.rock;
-    } else if (this.state.compSelection === "paper") {
-      result = result + this.paper;
-    } else {
-      result = result + this.scissor;
-    }
-
-    this.setState({
-      compSrc: result,
-    });
   }
 
   render() {
-    console.log(this.state.compSrc);
-
     let btnArr = [this.rock, this.paper, this.scissor];
 
     const btn = btnArr.map((x, i) => <img src={x} className="choices" />);
@@ -83,7 +56,7 @@ class Play extends React.Component {
         <div className="hud">
           <div className="compSelection">
             <img
-              src={this.state.compSrc}
+              src={this.state.compSelection}
               className="compSelectionOnHUD"
               alt="this is the comp choice"
             />
