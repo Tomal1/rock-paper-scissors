@@ -1,13 +1,12 @@
 #playCon{
     height: 100vh;
     width: 100vw;
-    border: 1px solid red;
+    background: rgb(29, 45, 95);
 }
 
 .hud{
     height: 50vh;
     width: 100vw;
-    border: 1px solid blue;
     display: flex;
 }
 
@@ -16,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid pink;
     height: 100%;
     width: 50%;
 
@@ -25,7 +23,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid aqua;
     height: 100%;
     width: 50%;
 
@@ -45,21 +42,24 @@
 .choice {
     height: 50vh;
     width: 100vw;
-    border: 1px solid green;
 
 }
 
 .choices {
     height:100px;
     width: 100px;
-    border: 1px solid purple;
+    border: 1px solid white;
+    border-radius: 20px;
+}
 
+.choices:hover{
+    cursor: pointer;
+    border: 2px solid rgb(44, 188, 207);
 }
 
 .choiceCon{
     height: 100%;
     width: 100%;
-    border: 1px solid yellow;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
