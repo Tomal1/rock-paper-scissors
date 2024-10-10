@@ -1,6 +1,7 @@
 
 import React from "react"
 import "../assets/style/intro.css"
+import { Link } from "react-router-dom"
 
 
 
@@ -30,7 +31,7 @@ class Intro extends React.Component {
                     </div>
 
                     <div className="controlCon">
-                        <button>PLAY</button>
+                        <Link to="/rock-paper-scissors/Play"><button>PLAY</button></Link>
                     </div>
             </div>
         )
