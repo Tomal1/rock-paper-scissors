@@ -59,9 +59,10 @@
 }
 
 #intro {
-  margin-top: 12.5vh;
+  padding-top: 12.5vh;
   background: rgb(29, 45, 95);
   color: rgb(44, 188, 207);
+  height: 100vh;
 }
 
 .titleCon {

@@ -1,6 +1,8 @@
 
 import React from "react"
 import "../assets/style/intro.css"
+
+//this link is used to redirect to other pages
 import { Link } from "react-router-dom"
 
 
