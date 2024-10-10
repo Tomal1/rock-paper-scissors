@@ -33,11 +33,30 @@
     width: 200px;
 
 }
+
+
+
 .compSelectionOnHUD{
     height: 200px;
     width: 200px;
+    animation-name: compSelectionOnHUD;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
 
 }
+
+@keyframes compSelectionOnHUD {
+    0% {
+      position: relative;
+      right: 400px;
+    }
+    100% {
+      position: relative;
+      right: 0px;
+    }
+  }
+
+
 
 .choice {
     height: 50vh;

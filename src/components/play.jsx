@@ -1,5 +1,6 @@
 import React from "react";
 import "../assets/style/play.css";
+import { Link } from "react-router-dom";
 
 class Play extends React.Component {
   constructor() {
@@ -18,7 +19,8 @@ class Play extends React.Component {
   }
 
   mySelection(e) {
-    this.compSelection();
+    this.decision();
+    this.compSelection(e);
 
     let result = "";
 
@@ -40,6 +42,7 @@ class Play extends React.Component {
 
     for (let i = 0; i < 3; i++) {
       let random = array[Math.floor(Math.random() * array.length)];
+
       this.setState({
         compSelection: random,
       });
@@ -48,25 +51,48 @@ class Play extends React.Component {
 
   render() {
     let btnArr = [this.rock, this.paper, this.scissor];
-
     const btn = btnArr.map((x, i) => <img src={x} className="choices" />);
+
+    if (this.state.compSelection === this.state.src) {
+      console.log("draw");
+    } else if (
+      this.state.compSelection === this.rock &&
+      this.state.src === this.scissor
+    ) {
+      console.log("you lose");
+    } else if (
+      this.state.compSelection === this.paper &&
+      this.state.src === this.rock
+    ) {
+      console.log("you lose");
+    } else if (
+      this.state.compSelection === this.scissor &&
+      this.state.src === this.paper
+    ) {
+      console.log("you lose");
+    } else {
+      console.log("you win");
+    }
 
     return (
       <div id="playCon">
         <div className="hud">
           <div className="compSelection">
-            <img
-              src={this.state.compSelection}
-              className="compSelectionOnHUD"
-              alt="this is the comp choice"
-            />
+            {this.state.src === "" ? (
+              ""
+            ) : (
+              <img
+                src={this.state.compSelection}
+                className="compSelectionOnHUD"
+              />
+            )}
           </div>
           <div className="mySelection">
-            <img
-              src={this.state.src}
-              className="mySelectionOnHUD"
-              alt="Choose one of the 3 options"
-            />
+            {this.state.src === "" ? (
+              ""
+            ) : (
+              <img src={this.state.src} className="mySelectionOnHUD" />
+            )}
           </div>
         </div>
 
