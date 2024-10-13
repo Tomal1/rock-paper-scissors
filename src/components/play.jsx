@@ -12,15 +12,17 @@ class Play extends React.Component {
     this.state = {
       src: "",
       compSelection: "",
+      display: "show"
     };
 
+    this.renderBTN = this.renderBTN.bind(this)
     this.compSelection = this.compSelection.bind(this);
     this.mySelection = this.mySelection.bind(this);
   }
 
   mySelection(e) {
-    this.decision();
     this.compSelection(e);
+    this.renderBTN()
 
     let result = "";
 
@@ -47,6 +49,18 @@ class Play extends React.Component {
         compSelection: random,
       });
     }
+
+    setTimeout(()=>{
+      location.reload()
+    },3000)
+  }
+
+
+  renderBTN(){
+    this.setState({
+      display: "none"
+    })
+
   }
 
   render() {
@@ -96,10 +110,11 @@ class Play extends React.Component {
           </div>
         </div>
 
-        <div className="choice">
+        <div className="choice" style={{display:this.state.display}}>
           <div className="choiceCon" onClick={this.mySelection}>
             {btn}
           </div>
+
         </div>
       </div>
     );
