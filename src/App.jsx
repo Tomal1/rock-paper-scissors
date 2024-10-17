@@ -5,7 +5,7 @@ import NotFoundPage from "./components/NotFoundPage";
 
 // to use react-router-dom do first - npm i react-router-dom
 
-// import these
+// React hooks cannot be used inside class components
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // save in a variable
@@ -26,6 +26,7 @@ const router = createBrowserRouter([
   },
 ]);
 
+// the hook can be used hear because App is a functinal component
 function App() {
   return (
     <>

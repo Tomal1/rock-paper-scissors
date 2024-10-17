@@ -99,6 +99,7 @@
 }
 
 .controlCon button {
+  margin-top: 150px;
   background: none;
   border-style: none;
   border: 1px solid white;
@@ -127,6 +128,7 @@
   }
 
   .controlCon button {
+    margin-top: 0px;
     height: 50px;
     width: 50px;
     font-size: 15px;
