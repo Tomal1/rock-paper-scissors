@@ -1,6 +1,5 @@
 import React from "react";
 import "../assets/style/play.css";
-import { Link } from "react-router-dom";
 
 class Play extends React.Component {
   constructor() {
@@ -12,17 +11,13 @@ class Play extends React.Component {
     this.state = {
       src: "",
       compSelection: "",
-      display: "show"
+      display: "show",
     };
-
-    this.renderBTN = this.renderBTN.bind(this)
-    this.compSelection = this.compSelection.bind(this);
-    this.mySelection = this.mySelection.bind(this);
   }
 
-  mySelection(e) {
+  mySelection = (e) => {
     this.compSelection(e);
-    this.renderBTN()
+    this.renderBTN();
 
     let result = "";
 
@@ -37,9 +32,9 @@ class Play extends React.Component {
     this.setState({
       src: result,
     });
-  }
+  };
 
-  compSelection() {
+  compSelection = () => {
     let array = [this.rock, this.paper, this.scissor];
 
     for (let i = 0; i < 3; i++) {
@@ -49,44 +44,42 @@ class Play extends React.Component {
         compSelection: random,
       });
     }
+  };
 
-    setTimeout(()=>{
-      location.reload()
-    },3000)
-  }
-
-
-  renderBTN(){
+  renderBTN = () => {
     this.setState({
-      display: "none"
-    })
+      display: "none",
+    });
+  };
 
-  }
+  decision = (comp, my) => {
+    // react hooks cannot be used indise class components
+
+    let result;
+
+    comp === my
+      ? setTimeout(() => location.reload(), 3000)
+      : comp === this.rock && my === this.scissor
+      ? (result = "/rock-paper-scissors/Ending/")
+      : comp === this.paper && my === this.rock
+      ? (result = "/rock-paper-scissors/Ending/")
+      : comp === this.scissor && my === this.paper
+      ? (result = "/rock-paper-scissors/Ending/")
+      : (result = "/rock-paper-scissors/Ending/");
+
+    setTimeout(() => {
+      window.location.href = result;
+    }, 3000);
+  };
 
   render() {
     let btnArr = [this.rock, this.paper, this.scissor];
     const btn = btnArr.map((x, i) => <img src={x} className="choices" />);
 
-    if (this.state.compSelection === this.state.src) {
-      console.log("draw");
-    } else if (
-      this.state.compSelection === this.rock &&
-      this.state.src === this.scissor
-    ) {
-      console.log("you lose");
-    } else if (
-      this.state.compSelection === this.paper &&
-      this.state.src === this.rock
-    ) {
-      console.log("you lose");
-    } else if (
-      this.state.compSelection === this.scissor &&
-      this.state.src === this.paper
-    ) {
-      console.log("you lose");
-    } else {
-      console.log("you win");
-    }
+    let c = this.state.compSelection;
+    let m = this.state.src;
+
+    this.state.display === "none" && this.decision(c, m);
 
     return (
       <div id="playCon">
@@ -110,11 +103,10 @@ class Play extends React.Component {
           </div>
         </div>
 
-        <div className="choice" style={{display:this.state.display}}>
+        <div className="choice" style={{ display: this.state.display }}>
           <div className="choiceCon" onClick={this.mySelection}>
             {btn}
           </div>
-
         </div>
       </div>
     );
