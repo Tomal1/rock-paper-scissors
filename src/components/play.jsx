@@ -1,5 +1,6 @@
 import React from "react";
 import "../assets/style/play.css";
+import Win from "./win";
 
 class Play extends React.Component {
   constructor() {
@@ -58,14 +59,14 @@ class Play extends React.Component {
     let result;
 
     comp === my
-      ? setTimeout(() => location.reload(), 3000)
+      ? (result = "/rock-paper-scissors/Draw/")
       : comp === this.rock && my === this.scissor
-      ? (result = "/rock-paper-scissors/Ending/")
+      ? (result = "/rock-paper-scissors/Lose/")
       : comp === this.paper && my === this.rock
-      ? (result = "/rock-paper-scissors/Ending/")
+      ? (result = "/rock-paper-scissors/Lose/")
       : comp === this.scissor && my === this.paper
-      ? (result = "/rock-paper-scissors/Ending/")
-      : (result = "/rock-paper-scissors/Ending/");
+      ? (result = "/rock-paper-scissors/Lose/")
+      : (result = "/rock-paper-scissors/Win/");
 
     setTimeout(() => {
       window.location.href = result;

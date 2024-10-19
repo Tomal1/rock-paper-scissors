@@ -1,6 +1,8 @@
 import Intro from "./components/intro";
 import Play from "./components/play";
-import Ending from "./components/ending";
+import Win from "./components/win";
+import Lose from "./components/lose";
+import Draw from "./components/draw";
 import NotFoundPage from "./components/NotFoundPage";
 
 // to use react-router-dom do first - npm i react-router-dom
@@ -21,8 +23,16 @@ const router = createBrowserRouter([
     element: <Play />,
   },
   {
-    path: "/rock-paper-scissors/Ending",
-    element: <Ending />,
+    path: "/rock-paper-scissors/Win",
+    element: <Win />,
+  },
+  {
+    path: "/rock-paper-scissors/Lose",
+    element: <Lose />,
+  },
+  {
+    path: "/rock-paper-scissors/Draw",
+    element: <Draw />,
   },
 ]);
 
