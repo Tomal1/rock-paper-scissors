@@ -1,11 +1,10 @@
 import React from "react";
 import "../assets/style/ending.css";
-import Intro from "./intro";
 
 class Win extends React.Component {
   backToHome = () => {
     setTimeout(() => {
-      return (window.location.href = "/rock-paper-scissors/");
+      return (window.location = "/rock-paper-scissors/");
     }, 3000);
   };
 

@@ -1,6 +1,5 @@
 import React from "react";
-import "../assets/style/play.css";
-import Win from "./win";
+import "../assets/style/play.css"
 
 class Play extends React.Component {
   constructor() {
@@ -56,6 +55,7 @@ class Play extends React.Component {
   decision = (comp, my) => {
     // react hooks cannot be used indise class components
 
+    console.log(comp, my);
     let result;
 
     comp === my
@@ -69,7 +69,7 @@ class Play extends React.Component {
       : (result = "/rock-paper-scissors/Win");
 
     setTimeout(() => {
-      window.location.href = result;
+      return (window.location = result);
     }, 3000);
   };
 

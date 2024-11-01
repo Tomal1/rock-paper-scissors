@@ -5,7 +5,7 @@ import Play from "./play";
 class Draw extends Play {
   backToHome = () => {
     setTimeout(() => {
-      return (window.location.href = "/rock-paper-scissors/");
+      return (window.location = "/rock-paper-scissors/");
     }, 3000);
   };
 
