@@ -1,21 +1,21 @@
 import React from "react";
 import "../assets/style/ending.css";
-import Play from "./play";
 
-class Draw extends Play {
-  backToHome = () => {
+import { useNavigate } from "react-router-dom";
+
+const Draw = () => {
+  const backToHome = () => {
+    let navigate = useNavigate();
     setTimeout(() => {
-      return (window.location = "/rock-paper-scissors/");
+      return navigate("/rock-paper-scissors/");
     }, 3000);
   };
 
-  render() {
-    return (
-      <div className="outcomeCon">
-        <p>{this.backToHome()}Draw</p>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="outcomeCon">
+      <p>{backToHome()}Draw</p>
+    </div>
+  );
+};
 
 export default Draw;

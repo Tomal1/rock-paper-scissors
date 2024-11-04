@@ -1,20 +1,21 @@
 import React from "react";
 import "../assets/style/ending.css";
 
-class Lose extends React.Component {
-  backToHome = () => {
+import { useNavigate } from "react-router-dom";
+
+const Lose = () => {
+  const backToHome = () => {
+    let navigate = useNavigate();
     setTimeout(() => {
-      return (window.location = "/rock-paper-scissors/");
+      return navigate("/rock-paper-scissors/");
     }, 3000);
   };
 
-  render() {
-    return (
-      <div className="outcomeCon">
-        <p>{this.backToHome()}You Lose</p>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="outcomeCon">
+      <p>{backToHome()}You Lose</p>
+    </div>
+  );
+};
 
 export default Lose;

@@ -1,20 +1,21 @@
 import React from "react";
 import "../assets/style/ending.css";
 
-class Win extends React.Component {
-  backToHome = () => {
+import { useNavigate } from "react-router-dom";
+
+const Win = () => {
+  const backToHome = () => {
+    let navigate = useNavigate();
     setTimeout(() => {
-      return (window.location = "/rock-paper-scissors/");
+      return navigate("/rock-paper-scissors/");
     }, 3000);
   };
 
-  render() {
-    return (
-      <div className="outcomeCon">
-        <p>{this.backToHome()}You Win</p>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="outcomeCon">
+      <p>{backToHome()}You Win</p>
+    </div>
+  );
+};
 
 export default Win;
