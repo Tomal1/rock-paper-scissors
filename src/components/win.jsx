@@ -3,7 +3,8 @@ import "../assets/style/ending.css";
 
 import { useNavigate } from "react-router-dom";
 
-const Win = () => {
+const Win = (props) => {
+  console.log(props)
   const backToHome = () => {
     let navigate = useNavigate();
     setTimeout(() => {
